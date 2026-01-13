@@ -1,10 +1,8 @@
 #include "../../common/detail.hpp"
 #include "../../client/rpc_client.hpp"
-
 void callback(const Json::Value &result) {
     ILOG("callback result: %d", result.asInt());
 }
-
 int main()
 {
     bitrpc::client::RpcClient client(true, "127.0.0.1", 8080);
