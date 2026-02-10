@@ -1,5 +1,6 @@
 #include "../../common/detail.hpp"
 #include "../../client/rpc_client.hpp"
+#include <thread>
 
 void callback(const Json::Value &result) {
     ILOG("callback result: %d", result.asInt());

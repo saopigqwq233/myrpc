@@ -14,7 +14,7 @@ namespace bitrpc
 #define KEY_HOST_PORT "port"
 #define KEY_RCODE "rcode"
 #define KEY_RESULT "result"
-
+// 消息类型：区分 RPC 请求 / 响应、主题（Topic）请求 / 响应、服务注册 / 发现请求等
     enum class MType
     {
         REQ_RPC = 0,
@@ -24,7 +24,7 @@ namespace bitrpc
         REQ_SERVICE,
         RSP_SERVICE
     };
-
+// 响应错误码：定义 RPC 调用的所有错误类型（成功、解析失败、服务未找到等）
     enum class RCode
     {
         RCODE_OK = 0,
@@ -58,13 +58,13 @@ namespace bitrpc
         }
         return it->second;
     }
-
+// 请求类型：区分异步请求、带回调的请求
     enum class RType
     {
         REQ_ASYNC = 0,
         REQ_CALLBACK
     };
-
+// 主题操作类型：创建 / 删除 / 订阅 / 取消订阅 / 发布主题
     enum class TopicOptype
     {
         TOPIC_CREATE = 0,
@@ -73,7 +73,7 @@ namespace bitrpc
         TOPIC_CANCEL,
         TOPIC_PUBLISH
     };
-
+// 服务操作类型：注册 / 发现 / 上线 / 下线服务
     enum class ServiceOptype
     {
         SERVICE_REGISTRY = 0,
